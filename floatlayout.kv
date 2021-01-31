@@ -1,0 +1,16 @@
+<Button>
+    id: general_button
+    font_size: 40
+    color: "#FF0000"
+    size_hint: 0.35, 0.5
+    background_color: "#00FF00" if general_button.state == "normal" else "#0000FF"
+
+<FloatLayout>
+    Button:
+        id: first_button
+        pos_hint: {"x": 0.65, "top": 1}
+        text: "CLICK ME" if first_button.state == "normal" else "I have been clicked!"
+    
+    Button:
+        pos_hint: {"x": 0, "top": 1}
+        text: "NO, CLICK ME"

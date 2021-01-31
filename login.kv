@@ -1,0 +1,39 @@
+<Interface>
+    username: username
+    password: password
+    
+    FloatLayout:
+        size: root.width, root.height
+        Label:
+            text: "Log In"
+            font_size: 40
+            size: 0.2, 0.2
+            pos_hint: {"y": 0.4}
+        
+        Label:
+            text: "Username: "
+            font_size: 30
+            pos_hint: {"x": -0.37, "y": 0.29}
+        
+        TextInput:
+            id: username
+            font_size: 30
+            size_hint: 0.69, 0.08
+            pos_hint: {"x": 0.25, "y": 0.75}
+
+        Label:
+            text: "Password: "
+            font_size: 30
+            pos_hint: {"x": -0.37, "y": 0.1}
+        
+        TextInput:
+            id: password
+            font_size: 30
+            size_hint: 0.69, 0.08
+            pos_hint: {"x": 0.25, "y": 0.56}
+
+        Button:
+            text: "Log In!"
+            size_hint: 0.3, 0.1
+            pos_hint: {"x": 0.35, "y": 0.4}
+            on_press: root.login()
