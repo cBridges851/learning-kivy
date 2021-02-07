@@ -1,0 +1,76 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+
+<MainWindow>:
+    name: "main"
+
+    FloatLayout:
+        Label:
+            text: "Login"
+            font_size: 60
+            pos_hint: {"x": 0.45, "y": 0.87}
+            size_hint: 0.1, 0.1
+
+        Label:
+            id: incorrect_login
+            text: "Incorrect username or password"
+            font_size: 25
+            size_hint: 0.1, 0.1
+            pos_hint: {"x": 0.455, "y": 0.05}
+            color: 1, 0, 0, 0
+
+        Label:
+            text: "Username:"
+            font_size: 40
+            size_hint: 0.1, 0.1
+            pos_hint: {"x": 0.1, "y": 0.7}
+        TextInput:
+            id: username
+            font_size: 40
+            size_hint: 0.655, 0.1
+            pos_hint: {"x": 0.3, "y": 0.7}
+
+        Label:
+            text: "Password:"
+            font_size: 40
+            size_hint: 0.1, 0.1
+            pos_hint: {"x": 0.1, "y": 0.5}
+        TextInput:
+            id: password
+            font_size: 40
+            size_hint: 0.655, 0.1
+            pos_hint: {"x": 0.3, "y": 0.5}
+
+        Button:
+            text: "Login"
+            size_hint: 0.2, 0.1
+            pos_hint: {"x": 0.4, "y": 0.3}
+            on_release: 
+                app.root.current = "second" if username.text == "Christa" and password.text == "banana" else "main"
+                incorrect_login.color = "#FF0000" if username.text != "Christa" or password.text != "banana" else "#000000"
+                username.text = ""
+                password.text = ""
+                root.manager.transition.direction = "left"
+
+        Label:
+            text: "Forgotten Your Password? Tough."
+            font_size: 20
+            size_hint: 0.1, 0.1
+            pos_hint: {"x": 0.455, "y": 0.15}
+
+<SecondWindow>:
+    name: "second"
+    FloatLayout:
+        Label:
+            pos_hint: {"x": 0.45, "y": 0.87}
+            size_hint: 0.1, 0.1 
+            text: "Logged In!"
+
+        Button:
+            size_hint: 0.2, 0.1
+            pos_hint: {"x": 0.4, "y": 0.5}
+            text: "Log Out"    
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"    
