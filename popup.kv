@@ -1,0 +1,15 @@
+#:kivy 1.0
+
+<Widgets>
+    FloatLayout:
+        Button:
+            text:"Open Popup"
+            pos_hint: {"x": 2.5, "y": 2.5}
+            size_hint: 3, 1
+            on_release: root.btn()
+
+<ChrispyPopup>
+    FloatLayout:
+        Label:
+            text:"Hello! I'm A Popup!"
+            pos_hint: {"x": 0.55, "y": 0.5}
