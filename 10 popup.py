@@ -1,10 +1,8 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.properties import ObjectProperty
-from kivy.uix.label import Label
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
-import kivy
+
 class Widgets(Widget):
     def btn(self):
         show_popup()
